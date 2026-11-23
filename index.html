@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Prototipo académico para consultar información sobre trámites de tránsito." />
+  <title>Consulta Ciudadana · Trámites de Tránsito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main id="login-screen" class="login-layout">
+    <section class="welcome-panel" aria-labelledby="welcome-title">
+      <a class="brand brand-light" href="#" aria-label="Consulta Ciudadana, inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path d="M8 25 13 7h6l5 18M11 19h10M14 12h4" />
+            <path d="M16 9v2m0 4v2m0 4v2" />
+          </svg>
+        </span>
+        <span>Consulta Ciudadana</span>
+      </a>
+
+      <div class="welcome-copy">
+        <span class="eyebrow eyebrow-light">Información clara, en un solo lugar</span>
+        <h1 id="welcome-title">Tus trámites de tránsito, más fáciles de consultar.</h1>
+        <p>
+          Encuentra orientación sobre requisitos, documentos, costos y pasos para cada
+          trámite.
+        </p>
+      </div>
+
+      <div class="welcome-illustration" aria-hidden="true">
+        <div class="illustration-orbit orbit-one"></div>
+        <div class="illustration-orbit orbit-two"></div>
+        <div class="illustration-card">
+          <span class="illustration-line line-long"></span>
+          <span class="illustration-line line-short"></span>
+          <span class="illustration-check">✓</span>
+        </div>
+        <svg class="illustration-car" viewBox="0 0 180 92" fill="none">
+          <path d="m31 57 10-24c3-8 9-12 18-12h57c9 0 15 4 20 12l14 24 11 5v17H19V62l12-5Z" fill="#fff" stroke="#b9ddf3"
+            stroke-width="3" />
+          <path d="m48 36 8-7h25v24H38l10-17Zm42-7h25c5 0 8 2 11 7l10 17H90V29Z" fill="#dceefa" />
+          <path d="M19 61h142" stroke="#b9ddf3" stroke-width="3" />
+          <circle cx="49" cy="78" r="11" fill="#12385b" stroke="#fff" stroke-width="4" />
+          <circle cx="134" cy="78" r="11" fill="#12385b" stroke="#fff" stroke-width="4" />
+          <path d="M23 60h11m123 0h8" stroke="#55ba9a" stroke-width="5" stroke-linecap="round" />
+        </svg>
+        <span class="illustration-spark spark-one">✦</span>
+        <span class="illustration-spark spark-two">✦</span>
+      </div>
+
+      <p class="welcome-note">Un prototipo académico de consulta ciudadana.</p>
+    </section>
+
+    <section class="login-panel" aria-labelledby="login-title">
+      <div class="login-card">
+        <a class="brand brand-dark auth-brand" href="#" aria-label="Consulta Ciudadana, inicio">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M8 25 13 7h6l5 18M11 19h10M14 12h4" />
+              <path d="M16 9v2m0 4v2m0 4v2" />
+            </svg>
+          </span>
+          <span>Consulta ciudadana<small>TRÁMITES DE TRÁNSITO</small></span>
+        </a>
+        <h2 id="login-title">Bienvenido</h2>
+        <p class="login-intro">Ingresa tus credenciales para continuar</p>
+
+        <form id="login-form">
+          <label for="email">Correo electrónico</label>
+          <div class="input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="3.5" y="5" width="17" height="14" rx="3" />
+              <path d="m5 7 7 5 7-5" />
+            </svg>
+            <input id="email" name="email" type="email" placeholder="correo@example.com" autocomplete="email"
+              required />
+          </div>
+
+          <div class="label-row">
+            <label for="password">Contraseña</label>
+          </div>
+          <div class="input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="4" y="10" width="16" height="11" rx="2.5" />
+              <path d="M8 10V7a4 4 0 1 1 8 0v3m-4 5v2" />
+            </svg>
+            <input id="password" name="password" type="password" placeholder="Ingresa tu contraseña"
+              autocomplete="current-password" required />
+            <button class="password-toggle" id="toggle-password" type="button" aria-label="Mostrar contraseña">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M2.5 12s3.2-6 9.5-6 9.5 6 9.5 6-3.2 6-9.5 6-9.5-6-9.5-6Z" />
+                <circle cx="12" cy="12" r="2.5" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="login-options">
+            <label class="remember-option" for="remember-me">
+              <input id="remember-me" name="remember-me" type="checkbox" />
+              <span>Recordarme</span>
+            </label>
+            <button class="text-button" type="button" id="forgot-password">
+              ¿Olvidaste tu contraseña?
+            </button>
+          </div>
+          <div id="login-message" class="form-message" role="status" aria-live="polite"></div>
+          <button class="button button-primary login-submit" type="submit">
+            Iniciar sesión
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </button>
+        </form>
+
+        <p class="auth-switch-copy">¿Aún no eres usuario?</p>
+        <button class="button button-primary auth-action" id="show-register" type="button">
+          Registrarse
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="9" cy="7" r="3" />
+            <path d="M3.5 19v-1.5a5.5 5.5 0 0 1 11 0V19M18 11v7m-3.5-3.5h7" />
+          </svg>
+        </button>
+        <div class="auth-divider"><span>o</span></div>
+        <button class="button auth-guest" id="continue-guest" type="button">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="9" cy="7" r="3" />
+            <path d="M3.5 19v-1.5a5.5 5.5 0 0 1 11 0V19m2-7h4m-2-2v4" />
+          </svg>
+          Continuar como invitado
+        </button>
+        <p class="guest-note"><span aria-hidden="true">ⓘ</span> Puedes consultar información pública sin iniciar sesión.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <main id="register-screen" class="auth-layout" hidden>
+    <section class="login-panel register-panel" aria-labelledby="register-title">
+      <div class="login-card register-card">
+        <a class="brand brand-dark auth-brand" href="#" aria-label="Consulta Ciudadana, inicio">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M8 25 13 7h6l5 18M11 19h10M14 12h4" />
+              <path d="M16 9v2m0 4v2m0 4v2" />
+            </svg>
+          </span>
+          <span>Consulta ciudadana<small>TRÁMITES DE TRÁNSITO</small></span>
+        </a>
+        <h2 id="register-title">Crear cuenta</h2>
+        <p class="login-intro">Ingresa tus datos para registrarte</p>
+        <form id="register-form">
+          <label for="register-name">Nombres</label>
+          <div class="input-wrap">
+            <input id="register-name" name="name" type="text" placeholder="Ingresa tus nombres" autocomplete="name"
+              required />
+          </div>
+          <label for="register-phone">Teléfono</label>
+          <div class="input-wrap">
+            <input id="register-phone" name="phone" type="tel" placeholder="Ingresa tu teléfono" autocomplete="tel"
+              required />
+          </div>
+          <label for="register-email">Correo electrónico</label>
+          <div class="input-wrap">
+            <input id="register-email" name="email" type="email" placeholder="correo@example.com" autocomplete="email"
+              required />
+          </div>
+          <label for="register-password">Contraseña</label>
+          <div class="input-wrap">
+            <input id="register-password" name="password" type="password" placeholder="Ingresa tu contraseña"
+              autocomplete="new-password" required />
+            <button class="password-toggle" id="toggle-register-password" type="button" aria-label="Mostrar contraseña">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M2.5 12s3.2-6 9.5-6 9.5 6 9.5 6-3.2 6-9.5 6-9.5-6-9.5-6Z" />
+                <circle cx="12" cy="12" r="2.5" />
+              </svg>
+            </button>
+          </div>
+          <p id="register-message" class="form-message" role="status" aria-live="polite"></p>
+          <button class="button button-primary login-submit" type="submit">
+            Registrarse
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="9" cy="7" r="3" />
+              <path d="M3.5 19v-1.5a5.5 5.5 0 0 1 11 0V19m2-7h4m-2-2v4" />
+            </svg>
+          </button>
+        </form>
+        <div class="auth-divider"><span>o</span></div>
+        <button class="button auth-guest auth-back" id="back-to-login" type="button">
+          <span aria-hidden="true">←</span> Volver al inicio
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <main id="home-screen" class="home-screen" hidden>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand brand-dark" href="#" aria-label="Consulta Ciudadana, inicio">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M8 25 13 7h6l5 18M11 19h10M14 12h4" />
+              <path d="M16 9v2m0 4v2m0 4v2" />
+            </svg>
+          </span>
+          <span>Consulta Ciudadana</span>
+        </a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a class="nav-link active" href="#inicio">Inicio</a>
+          <a class="nav-link" href="#categorias">Categorías</a>
+          <button class="nav-link nav-button quick-action" data-topic="Ayuda">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M9.6 9a2.5 2.5 0 1 1 4.5 1.5c-1.1 1.1-2.1 1.4-2.1 3m0 3h.01" />
+            </svg>
+            Ayuda
+          </button>
+        </nav>
+        <button class="account-button" id="sign-out" type="button" aria-label="Cerrar sesión de demostración">
+          <span class="account-avatar" aria-hidden="true">U</span>
+          <span class="account-name">Cerrar sesión</span>
+          <svg class="account-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m7 10 5 5 5-5" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="home-content" id="inicio">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <span class="eyebrow eyebrow-light">ORIENTACIÓN CIUDADANA</span>
+          <h1 id="hero-title">Consulta tus trámites de tránsito</h1>
+          <p>Requisitos, documentos, costos y pasos para orientarte en un solo lugar.</p>
+          <form id="search-form" class="search-form" role="search">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="10.8" cy="10.8" r="6.8" />
+              <path d="m16 16 4.5 4.5" />
+            </svg>
+            <input id="search-input" type="search" placeholder="¿Qué trámite necesitas consultar?"
+              aria-label="¿Qué trámite necesitas consultar?" />
+            <button class="button search-button" type="submit">Buscar</button>
+          </form>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-sun"></div>
+          <div class="hero-document">
+            <span class="doc-heading"></span>
+            <span class="doc-row"><i></i><b></b></span>
+            <span class="doc-row"><i></i><b></b></span>
+            <span class="doc-row"><i></i><b></b></span>
+            <span class="doc-check">✓</span>
+          </div>
+          <svg class="hero-car" viewBox="0 0 180 92" fill="none">
+            <path d="m31 57 10-24c3-8 9-12 18-12h57c9 0 15 4 20 12l14 24 11 5v17H19V62l12-5Z" fill="#fff"
+              stroke="#8bb9d8" stroke-width="3" />
+            <path d="m48 36 8-7h25v24H38l10-17Zm42-7h25c5 0 8 2 11 7l10 17H90V29Z" fill="#dceefa" />
+            <path d="M19 61h142" stroke="#8bb9d8" stroke-width="3" />
+            <circle cx="49" cy="78" r="11" fill="#133b63" stroke="#fff" stroke-width="4" />
+            <circle cx="134" cy="78" r="11" fill="#133b63" stroke="#fff" stroke-width="4" />
+            <path d="M23 60h11m123 0h8" stroke="#55ba9a" stroke-width="5" stroke-linecap="round" />
+          </svg>
+          <span class="hero-spark">✦</span>
+        </div>
+      </section>
+
+      <section id="search-results" class="results-panel" aria-live="polite" hidden></section>
+
+      <section id="categorias" class="content-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">EXPLORA LA INFORMACIÓN</span>
+            <h2>Categorías de trámites</h2>
+            <p>Elige una categoría para comenzar tu consulta.</p>
+          </div>
+        </div>
+        <div class="category-grid">
+          <button class="category-card category-action" data-category="Licencias">
+            <span class="category-icon icon-blue">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2.5" />
+                <circle cx="8.5" cy="11" r="2" />
+                <path d="M5.5 16c.7-1.5 1.7-2.2 3-2.2s2.3.7 3 2.2m2-6h4m-4 4h4" />
+              </svg>
+            </span>
+            <span class="category-copy">
+              <strong>Licencias</strong>
+              <span>Consulta información y requisitos</span>
+            </span>
+            <svg class="card-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </button>
+          <button class="category-card category-action" data-category="Vehículos">
+            <span class="category-icon icon-green">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="m4 14 2-6h12l2 6v4h-2v-2H6v2H4v-4Z" />
+                <path d="m6 11 1-3m11 3-1-3M4 13h16" />
+                <circle cx="7.5" cy="14" r="1" />
+                <circle cx="16.5" cy="14" r="1" />
+              </svg>
+            </span>
+            <span class="category-copy">
+              <strong>Vehículos</strong>
+              <span>Encuentra orientación para tu vehículo</span>
+            </span>
+            <svg class="card-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </button>
+          <button class="category-card category-action" data-category="Comparendos">
+            <span class="category-icon icon-lilac">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 3.5h7l4 4V20a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2V5.5a2 2 0 0 1 2-2Z" />
+                <path d="M14 4v4h4m-8 4h4m-4 3h5m-5 3h3" />
+                <circle cx="17.5" cy="17.5" r="3.5" />
+                <path d="m20 20 2 2" />
+              </svg>
+            </span>
+            <span class="category-copy">
+              <strong>Comparendos</strong>
+              <span>Consulta información relacionada</span>
+            </span>
+            <svg class="card-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </button>
+          <button class="category-card category-action" data-category="Otros trámites">
+            <span class="category-icon icon-sky">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 8a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8Z" />
+                <path d="M3 10h18" />
+              </svg>
+            </span>
+            <span class="category-copy">
+              <strong>Otros trámites</strong>
+              <span>Explora más temas de tránsito</span>
+            </span>
+            <svg class="card-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6" />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <section class="content-section quick-section" aria-labelledby="quick-title">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">A UN CLIC</span>
+            <h2 id="quick-title">Accesos rápidos</h2>
+          </div>
+        </div>
+        <div class="quick-grid">
+          <button class="quick-card quick-action" data-topic="Buscar un trámite">
+            <span class="quick-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="10.8" cy="10.8" r="6.8" />
+                <path d="m16 16 4.5 4.5" />
+              </svg></span>
+            <span><strong>Buscar un trámite</strong><small>Encuentra lo que necesitas</small></span>
+            <span class="mini-arrow">→</span>
+          </button>
+          <button class="quick-card quick-action" data-topic="Preguntas frecuentes">
+            <span class="quick-icon quick-icon-green"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 11.5a7.5 7.5 0 0 1-11 6.7L4 20l1.5-4A7.5 7.5 0 1 1 20 11.5Z" />
+                <path d="M9.5 9.2a2.5 2.5 0 1 1 4.6 1.4c-1.1 1.2-2.1 1.4-2.1 3m0 2h.01" />
+              </svg></span>
+            <span><strong>Preguntas frecuentes</strong><small>Resuelve tus inquietudes</small></span>
+            <span class="mini-arrow">→</span>
+          </button>
+          <button class="quick-card quick-action" data-topic="Canales oficiales de atención">
+            <span class="quick-icon quick-icon-teal"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 13v-2a8 8 0 0 1 16 0v2m-16-1H3v5h4v-5H4Zm16 0h1v5h-4v-5h3ZM17 19c-1 1-2.5 1.5-5 1.5" />
+              </svg></span>
+            <span><strong>Canales de atención</strong><small>Consulta dónde obtener ayuda</small></span>
+            <span class="mini-arrow">→</span>
+          </button>
+        </div>
+      </section>
+
+      <aside class="notice notice-warning">
+        <span class="notice-icon" aria-hidden="true">!</span>
+        <p>
+          <strong>Verifica la información.</strong> Los requisitos, costos y pasos deben
+          confirmarse con la entidad competente antes de realizar un trámite.
+        </p>
+      </aside>
+      <aside class="notice notice-info">
+        <span class="info-icon" aria-hidden="true">i</span>
+        <p>Prototipo académico. La información de ejemplo está pendiente de confirmación oficial.</p>
+      </aside>
+    </div>
+    <footer class="site-footer">
+      <span>Consulta Ciudadana de Trámites de Tránsito</span>
+      <span>Prototipo académico · Información por verificar</span>
+    </footer>
+
+    <dialog id="info-dialog" class="info-dialog" aria-labelledby="dialog-title">
+      <span class="dialog-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="m7 21 3-18m7 18-3-18m-3 5h2m2 5h2m-7 5h2" />
+        </svg>
+      </span>
+      <h2 id="dialog-title">Próximamente</h2>
+      <p id="dialog-message">Estamos trabajando para habilitar esta opción. Estará disponible en futuras
+        actualizaciones.</p>
+      <button id="dialog-close" class="button button-primary dialog-button" type="button">
+        Entendido
+      </button>
+    </dialog>
+
+    <dialog id="chat-dialog" class="chat-dialog" aria-labelledby="chat-title">
+      <header class="chat-header">
+        <div class="chat-heading">
+          <span class="chat-avatar" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 3.5 13.8 9l5.7 1.8-5.7 1.8L12 18l-1.8-5.4-5.7-1.8L10.2 9 12 3.5Z" />
+              <path d="m19 15 .9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z" />
+            </svg>
+          </span>
+          <span>
+            <strong id="chat-title">Asistente de tránsito</strong>
+            <small><i aria-hidden="true"></i> Asistente virtual</small>
+          </span>
+        </div>
+        <button id="chat-close" class="chat-close" type="button" aria-label="Cerrar chat">
+          ×
+        </button>
+      </header>
+      <div id="chat-status-note" class="chat-demo-note" role="status" aria-live="polite">
+        Preparando la conexión con Gemini...
+      </div>
+      <div id="chat-messages" class="chat-messages" aria-live="polite">
+        <div class="chat-message assistant-message">
+          ¡Hola! Puedo orientarte sobre trámites de tránsito. ¿Qué te gustaría consultar?
+        </div>
+        <div id="chat-suggestions" class="chat-suggestions" aria-label="Preguntas sugeridas">
+          <button type="button" class="chat-suggestion" data-prompt="¿Cómo renuevo mi licencia?" disabled>
+            Renovar licencia
+          </button>
+          <button type="button" class="chat-suggestion" data-prompt="¿Cómo puedo consultar un comparendo?" disabled>
+            Consultar comparendo
+          </button>
+          <button type="button" class="chat-suggestion" data-prompt="¿Qué trámites puedo hacer para mi vehículo?"
+            disabled>
+            Trámites de vehículos
+          </button>
+        </div>
+      </div>
+      <form id="chat-form" class="chat-composer">
+        <label class="sr-only" for="chat-input">Escribe tu pregunta</label>
+        <input id="chat-input" name="question" type="text" maxlength="500" placeholder="Escribe tu pregunta..."
+          autocomplete="off" disabled required />
+        <button id="chat-send" class="chat-send" type="submit" aria-label="Enviar mensaje" disabled>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m21 3-7.5 18-3.5-7-7-3.5L21 3Z" />
+            <path d="M10 14 21 3" />
+          </svg>
+        </button>
+      </form>
+      <p class="chat-disclaimer">No compartas información personal. Confirma los datos con la entidad competente.</p>
+    </dialog>
+  </main>
+  <script type="module" src="src/main.js"></script>
+</body>
+
+</html>
